@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 12:38:29 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/07 15:38:54 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/07 12:43:36 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/07 19:44:01 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_reverse_alphabet(void)
 {
-	write(1, &c, 1);
+	write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
 }
-
-int main
