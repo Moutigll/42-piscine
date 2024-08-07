@@ -1,0 +1,1 @@
+ls -t -x --ignore=hidden --indicator-style='slash' -m
