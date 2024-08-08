@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 20:06:37 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/08 13:17:13 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/08 11:21:13 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/08 13:10:18 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,44 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_is_negative(int n)
+void	check_size(char c)
 {
-	if (n >= 0)
+	char	buffer[80];
+	int		length;
+
+	length = sprintf(buffer, "%d", c);
+	if (c < 10)
 	{
-		ft_putchar('P');
+		ft_putchar('0');
+		ft_putchar(c + 48);
 	}
 	else
 	{
-		ft_putchar('N');
+		write(1, buffer, length);
 	}
-	return (0);
+}
+
+void	ft_print_comb2(void)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	while (a < 99)
+	{
+		b = a + 1;
+		while (b < 100)
+		{
+			check_size(a);
+			ft_putchar(' ');
+			check_size(b);
+			if (b != 99 || a != 98)
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
+			b++;
+		}
+		a ++;
+	}
 }
