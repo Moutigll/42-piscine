@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:21:13 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/08 14:58:20 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/08 16:33:50 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@ void	ft_putchar(char c)
 
 void	check_size(char c)
 {
-	char	buffer[80];
-	int		length;
-
-	length = sprintf(buffer, "%d", c);
 	if (c < 10)
 	{
 		ft_putchar('0');
@@ -31,7 +27,8 @@ void	check_size(char c)
 	}
 	else
 	{
-		write(1, buffer, length);
+		ft_putchar(c / 10 + 48);
+		ft_putchar(c % 10 + 48);
 	}
 }
 
