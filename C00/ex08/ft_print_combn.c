@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 12:08:17 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 12:19:36 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/10 13:20:25 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,36 @@ void	ft_putnbr(int nb)
 	}
 }
 
-void	ft_print_combn(int n);
+void	ft_print_combn(int n)
 {
-	int	a[10];
-	
-	
+	int	c;
+	int d;
 
-	a[0] = '0';
-	while (a[0] <= '7')
+	int a[10] = {'9', '8', '7', '6', '5', '4', '3', '2', '1', '0'};
+	while (a[n] <= 10 - n)
 	{
-		a[1] = a[0] + 1;
-		while (a[1] <= '8')
+		c = 0;
+		while (c < n)
 		{
-			a[2] = a[1] + 1;
-			while (a[2] <= '9')
+			a[c] = a[c + 1] + 1;
+			while (a[c] <= 10 - c)
 			{
-				ft_putchar(a[0]);
-				ft_putchar(a[1]);
-				ft_putchar(a[2]);
-				if (a[0] != '0' + )
+				d = 0
+				while (d < n)
 				{
-					ft_putchar(',');
-					ft_putchar(' ');
+					ft_putchar(a[c]);
 				}
+				
+				ft_putchar(',');
+				ft_putchar(' ');
 				a[2]++;
 			}
-			a[1]++;
+			c++;
 		}
-		a[0]++;
 	}
+}
+
+int main(void)
+{
+	ft_print_combn(3):
 }
