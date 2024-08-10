@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 20:06:37 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 10:11:54 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/10 10:10:59 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/10 10:51:50 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,31 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_is_negative(int n)
+void	ft_putnbr(int nb)
 {
-	if (n >= 0)
+	if (nb == -2147483648)
 	{
-		ft_putchar('P');
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	while (nb > 10)
+	{
+		ft_putnbr(nb / 10);
+		nb = nb % 10;
+	}
+	if (nb == 10)
+	{
+		ft_putchar('1');
+		ft_putchar('0');
 	}
 	else
 	{
-		ft_putchar('N');
+		ft_putchar(nb + 48);
 	}
-	return (0);
 }

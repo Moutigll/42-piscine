@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 20:06:37 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 10:11:54 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/09 10:30:01 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/09 12:34:14 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+char	*ft_strcpy(char *dest, char *src)
 {
-	write(1, &c, 1);
+	while (*src != '\0')
+	{
+		*dest += *src;
+		src++;
+	}
+	return (dest);
 }
 
-int	ft_is_negative(int n)
+int	main(void)
 {
-	if (n >= 0)
-	{
-		ft_putchar('P');
-	}
-	else
-	{
-		ft_putchar('N');
-	}
-	return (0);
+	char a[8] = "wgefwef";
+	char b;
+	char* pta = &a[8];
+	char* ptb = &b;
+
+	*ft_strcpy(&b, &a);
+	printf('%c', &b);
+	
 }
