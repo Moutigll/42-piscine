@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 10:54:53 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 11:57:44 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/10 12:31:34 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putchar(char c);
 
+//Render the top and bottom lines with the choosen characters
 void	line(int a)
 {
 	int	c;
@@ -31,6 +32,7 @@ void	line(int a)
 	}
 }
 
+//Render the lines between the top and bottom ones
 void	lineb(int a)
 {
 	int	c;
@@ -49,6 +51,7 @@ void	lineb(int a)
 	ft_putchar('\n');
 }
 
+//Main function that render the lines in the correct order
 void	rush(int a, int b)
 {
 	int	c;
