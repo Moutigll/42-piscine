@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 12:08:17 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 13:20:25 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/10 16:33:39 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,54 +17,58 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	print(int *tab, int n)
 {
-	while (nb > 10)
+	int	i;
+	int	display;
+
+	display = 1;
+	i = 0;
+	while (++i < n)
+		if (tab[i - 1] >= tab[i])
+			display = 0;
+	if (!display)
+		return ;
+	i = -1;
+	while (++i < n)
+		ft_putchar(tab[i] + 48);
+	if (tab[0] < (10 - n))
 	{
-		ft_putnbr(nb / 10);
-		nb = nb % 10;
-	}
-	if (nb == 10)
-	{
-		ft_putchar('1');
-		ft_putchar('0');
-	}
-	else
-	{
-		ft_putchar(nb + 48);
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }
 
 void	ft_print_combn(int n)
 {
-	int	c;
-	int d;
+	int	i;
+	int	tab[10];
 
-	int a[10] = {'9', '8', '7', '6', '5', '4', '3', '2', '1', '0'};
-	while (a[n] <= 10 - n)
+	if (n > 10 || n < 0)
+		return ;
+	i = -1;
+	while (++i < n)
+		tab[i] = i;
+	while (tab[0] <= (10 - n) && n >= 1)
 	{
-		c = 0;
-		while (c < n)
+		print(tab, n);
+		if (n == 10)
+			break ;
+		tab[n - 1]++;
+		i = n;
+		while (i && n > 1)
 		{
-			a[c] = a[c + 1] + 1;
-			while (a[c] <= 10 - c)
+			i--;
+			if (tab[i] > 9)
 			{
-				d = 0
-				while (d < n)
-				{
-					ft_putchar(a[c]);
-				}
-				
-				ft_putchar(',');
-				ft_putchar(' ');
-				a[2]++;
+				tab[i - 1]++;
+				tab[i] = 0;
 			}
-			c++;
 		}
 	}
 }
 
-int main(void)
+/*int main(void)
 {
-	ft_print_combn(3):
-}
+	ft_print_combn(6);
+}*/
