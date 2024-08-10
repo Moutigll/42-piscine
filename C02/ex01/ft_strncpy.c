@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 10:30:01 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 17:43:48 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/10 17:46:36 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/10 17:54:39 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
+	while (n-- > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		dest[n] = src[n];
 	}
-	dest[i] = '\0';
 	return (dest);
 }

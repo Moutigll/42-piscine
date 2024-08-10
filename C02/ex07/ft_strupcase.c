@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 10:30:01 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 17:43:48 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/10 18:28:44 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/10 18:39:17 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
-	int	i;
+	int	a;
 
-	i = 0;
-	while (src[i] != '\0')
+	a = 0;
+	while (str[a] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if (str[a] > 96 && str[a] < 123)
+		{
+			str[a] -= 32;
+		}
+		a++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (str);
 }

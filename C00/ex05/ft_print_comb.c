@@ -6,12 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 20:26:57 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/08 11:13:32 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/10 17:31:13 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {

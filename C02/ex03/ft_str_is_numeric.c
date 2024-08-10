@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 10:30:01 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 17:43:48 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/10 18:18:30 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/10 18:20:13 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int ft_str_is_numeric(char *str)
 {
-	int	i;
+	int	a;
+	int	b;
 
-	i = 0;
-	while (src[i] != '\0')
+	a = 1;
+	b = 0;
+	while (str[b] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if (str[b] < 48 || str[b] > 57)
+		{
+			a = 0;
+		}
+		b++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (a);
 }
