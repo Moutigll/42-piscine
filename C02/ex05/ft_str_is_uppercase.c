@@ -6,11 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:22:46 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 18:23:35 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/11 11:05:50 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_uppercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	int	a;
 	int	b;

@@ -1,38 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 18:42:48 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/11 10:50:48 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/11 12:04:21 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/11 12:29:28 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	char_to_hex(char c)
+{
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	ft_putchar('\\');
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
+}
+
+void	ft_putstr_non_printable(char *str)
 {
 	int	a;
-	int	b;
-	int	c;
 
 	a = 0;
 	while (str[a] != '\0')
 	{
-		b = str[a];
-		c = str[a - 1];
-		if ((b > 96 && b < 123) && (c == 45 || c == 43 || c == 32 || a == 0))
+		if (str[a] < 32 || str[a] > 126)
 		{
-			str[a] -= 32;
+			char_to_hex(str[a]);
 		}
-		else if ((c > 64 && c < 91) || ((c > 96 && c < 123)))
+		else
 		{
-			if (b > 64 && b < 91)
-			{
-				str[a] += 32;
-			}
+			ft_putchar(str[a]);
 		}
 		a++;
 	}
-	return (str);
 }
+
+/*int	main(void)
+{
+	char	txt[] = "Coucou\ntu vas bien ?";
+
+	ft_putstr_non_printable(txt);
+	return 0;
+}*/

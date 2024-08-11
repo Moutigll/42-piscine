@@ -6,13 +6,13 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:46:36 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 17:54:39 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/11 11:04:05 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	while (n-- > 0)
+	while (n--)
 	{
 		dest[n] = src[n];
 	}

@@ -6,11 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:18:30 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/10 18:20:13 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/11 11:05:36 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_numeric(char *str)
+int	ft_str_is_numeric(char *str)
 {
 	int	a;
 	int	b;

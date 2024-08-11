@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 10:30:01 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/11 11:03:48 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/11 10:46:02 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/11 11:41:28 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	a;
+	unsigned int	src_len;
 
-	i = 0;
-	while (src[i] != '\0')
+	src_len = 0;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (size == 0)
+		return (src_len);
+	a = 0;
+	while (a < size - 1 && src[a] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		dest[a] = src[a];
+		a++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	dest[a] = '\0';
+	return (src_len);
 }
