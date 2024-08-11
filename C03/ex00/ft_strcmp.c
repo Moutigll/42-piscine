@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 17:46:36 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/11 18:08:19 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/11 15:06:51 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/11 15:27:03 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, const char *src, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
+	int	c[4];
 
-	i = 0;
-	while (i < n && src[i] != '\0')
+	c[0] = 0;
+	c[1] = 0;
+	c[2] = 0;
+	c[3] = 0;
+	while (s1[c[0]] != '\0' && s1[c[1]] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if (s1[c[0]] != '\0')
+		{
+			c[0]++;
+			c[2]++;
+		}
+		if (s2[c[1]] != '\0')
+		{
+			c[1]++;
+			c[3]++;
+		}
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (c[2] - c[3]);
 }

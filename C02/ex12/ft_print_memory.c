@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 13:32:42 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/11 14:38:21 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/11 15:04:20 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_prt_ctn(unsigned char *addr)
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	unsigned char *c;
+	unsigned char	*c;
 
 	c = addr;
 	ft_prt_addr((unsigned long long)addr);
@@ -79,7 +79,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	return (0);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	*test;
 	char	**addr;
@@ -88,4 +88,4 @@ int	main(void)
 	addr = &test;
 	printf("\nValleur attendue: %p", &test);
 	ft_print_memory(addr, 1);
-}
+}*/

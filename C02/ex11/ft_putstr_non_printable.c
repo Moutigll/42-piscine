@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 12:04:21 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/11 12:29:28 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/11 18:35:55 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	char_to_hex(char c)
+void	ft_put_hex(unsigned char c)
 {
-	char	*hex;
+	const char	*hex;
 
 	hex = "0123456789abcdef";
 	ft_putchar('\\');
@@ -29,26 +29,26 @@ void	char_to_hex(char c)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int	a;
+	int	i;
 
-	a = 0;
-	while (str[a] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (str[a] < 32 || str[a] > 126)
+		if ((unsigned char)str[i] < 32 || (unsigned char)str[i] > 126)
 		{
-			char_to_hex(str[a]);
+			ft_put_hex((unsigned char)str[i]);
 		}
 		else
 		{
-			ft_putchar(str[a]);
+			ft_putchar(str[i]);
 		}
-		a++;
+		i++;
 	}
 }
 
 /*int	main(void)
 {
-	char	txt[] = "Coucou\ntu vas bien ?";
+	char	txt[] = "Coucou\ntu vas bien ?";
 
 	ft_putstr_non_printable(txt);
 	return 0;
