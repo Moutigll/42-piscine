@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 10:39:23 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/13 14:47:09 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:12:32 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,29 @@ int	is_base_correct(char *base)
 	return (1);
 }
 
+int	convert(char *str, char *base, int i, int base_len)
+{
+	int	k;
+	int	result;
+
+	result = 0;
+	while (str[i])
+	{
+		k = 0;
+		while (base[k] && base[k] != str[i])
+			k++;
+		if (base[k] == '\0')
+			break ;
+		result = result * base_len + k;
+		i++;
+	}
+	return (result);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int	i;
-	int	j;
-	int	k;
 	int	sign;
-	int	result;
 	int	base_len;
 
 	if (is_base_correct(base) == 0)
@@ -64,35 +80,18 @@ int	ft_atoi_base(char *str, char *base)
 			sign = -sign;
 		i++;
 	}
-	result = 0;
 	base_len = 0;
 	while (base[base_len])
 		base_len++;
-	j = 0;
-	while (str[i + j])
-	{
-		k = 0;
-		while (base[k] && base[k] != str[i + j])
-			k++;
-		if (base[k] == '\0')
-			break ;
-		result = result * base_len + k;
-		j++;
-	}
-	return (result * sign);
+	return (convert(str, base, i, base_len) * sign);
 }
 
 /*int	main(void)
 {
 	printf("%d\n", ft_atoi_base("nneefiff", "poneyvif"));
-	ft_putchar('\n');
 	printf("%d\n", ft_atoi_base("eenno", "  poney-vif"));
-	ft_putchar('\n');
 	printf("%d\n", ft_atoi_base("-++---+-nneefff", "poneyvif"));
-	ft_putchar('\n');
-	printf("%d\n", ft_atoi_base("4833215", "0"));
-	ft_putchar('\n');
+	printf("%d\n", ft_atoi_base("4833215", "01"));
 	printf("%d\n", ft_atoi_base("-10000000000000000000000000000000", "01"));
-	ft_putchar('\n');
 	printf("%d\n", ft_atoi_base("F49A2C", "0123456789ABCDEF"));
 }*/
