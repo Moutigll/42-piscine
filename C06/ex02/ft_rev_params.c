@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 15:21:43 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/14 19:40:52 by ele-lean         ###   ########.fr       */
+/*   Created: 2024/08/14 16:34:52 by ele-lean          #+#    #+#             */
+/*   Updated: 2024/08/14 17:08:53 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(int argc, char const *argv[])
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argc)
+	i = argc - 1;
+	while (i > 0)
 	{
 		j = 0;
 		while (argv[i][j])
@@ -27,7 +27,7 @@ int	main(int argc, char const *argv[])
 			j++;
 		}
 		write(1, "\n", 1);
-		i++;
+		i--;
 	}
 	return (0);
 }
