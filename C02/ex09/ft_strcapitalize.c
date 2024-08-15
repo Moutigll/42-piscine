@@ -6,33 +6,40 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:42:48 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/11 18:26:46 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/15 12:17:12 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 char	*ft_strcapitalize(char *str)
 {
-	int	a;
-	int	b;
-	int	c;
+	unsigned int	i;
 
-	a = 0;
-	while (str[a] != '\0')
+	if (str[0] != '\0' && str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
+	i = 1;
+	while (str[i] != '\0')
 	{
-		b = str[a];
-		c = str[a - 1];
-		if (b > 96 && b < 123)
+		if (((str[i] >= 'a' && str[i] <= 'z')
+				|| (str[i] >= 'A' && str[i] <= 'Z')) && (str[i - 1] < '0'
+				|| (str[i - 1] > '9' && str[i - 1] < 'A')
+				|| (str[i - 1] > 'Z' && str[i - 1] < 'a')
+				|| str[i - 1] > 'z'))
 		{
-			if (c < '0' || c > 'z' || (c > 'Z' && c < 'a')
-				|| (c < 'A' && c > '9') || a == 0)
-				str[a] -= 32;
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] -= 32;
 		}
-		else if ((c > 64 && c < 91) || ((c > 96 && c < 123)))
-		{
-			if (b > 64 && b < 91)
-				str[a] += 32;
-		}
-		a++;
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
 	}
 	return (str);
 }
+
+/*int	main(void)
+{
+	printf(ft_strcapitalize("salut, COMMENT tu vas ? 42mots quaRan
+	te-deux; cinquante+et+un"));
+}
+*/
