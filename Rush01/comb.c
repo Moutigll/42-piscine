@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 
+extern int	g_comb[16];
 void	initialize_utils(int utils[]);
 int		check_sequences(int tab[4][4], int comb[16], int utils[]);
 
@@ -64,7 +65,8 @@ int	check1(int p1[4], int p2[4], int p3[4], int p4[4])
 	i = 0;
 	while (i < 4)
 	{
-		if(p1[i] == p2[i] || p1[i] == p3[i] || p1[i] == p4[i] || p2[i] == p3[i] || p2[i] == p4[i] || p3[i] == p4[i])
+		if (p1[i] == p2[i] || p1[i] == p3[i] || p1[i] == p4[i]
+			|| p2[i] == p3[i] || p2[i] == p4[i] || p3[i] == p4[i])
 			return (0);
 		i++;
 	}
@@ -75,11 +77,8 @@ int	check1(int p1[4], int p2[4], int p3[4], int p4[4])
 		{p4[0], p4[1], p4[2], p4[3]}
 	};
 
-	// Valeurs de la séquence
-	int b[16] = {1, 2, 3, 3, 3, 3, 1, 2, 1, 2, 2, 2, 4, 3, 1, 2};
-
 	// Vérification de la grille
-	if (check(a, b) == 1)
+	if (check(a, g_comb) == 1)
 	{
 		print_combination(p1, p2, p3, p4);
 		return (1);

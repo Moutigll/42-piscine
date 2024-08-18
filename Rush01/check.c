@@ -6,11 +6,13 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 18:11:53 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/17 22:15:49 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/18 18:45:15 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+extern int	g_comb[16];
 
 int	get_value(int tab[4][4], int utils[], int i, int d)
 {
