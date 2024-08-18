@@ -6,26 +6,26 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:03:46 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/17 22:16:22 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/18 16:18:43 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	initialize_utils(int utils[]);
-int		check_sequences(int tab[4][4], int comb[16], int utils[]);
+void	generate_combinations(int permutations[24][4]);
 
-int	check(int tab[4][4], int comb[16])
+int main(int argc, char const *argv[])
 {
-	int	utils[24];
+	int permutations[24][4] = {
+		{1, 2, 3, 4}, {1, 2, 4, 3}, {1, 3, 2, 4}, {1, 3, 4, 2},
+		{1, 4, 2, 3}, {1, 4, 3, 2}, {2, 1, 3, 4}, {2, 1, 4, 3},
+		{2, 3, 1, 4}, {2, 3, 4, 1}, {2, 4, 1, 3}, {2, 4, 3, 1},
+		{3, 1, 2, 4}, {3, 1, 4, 2}, {3, 2, 1, 4}, {3, 2, 4, 1},
+		{3, 4, 1, 2}, {3, 4, 2, 1}, {4, 1, 2, 3}, {4, 1, 3, 2},
+		{4, 2, 1, 3}, {4, 2, 3, 1}, {4, 3, 1, 2}, {4, 3, 2, 1}
+	};
 
-	initialize_utils(utils);
-	return (check_sequences(tab, comb, utils));
+	generate_combinations(permutations);
+	return (0);
 }
 
-int	main()
-{
-	int a[4][4] = {{1, 2, 3, 4}, {2, 3, 4, 1}, {3, 4, 1, 2}, {4, 1, 2, 3}};
-	int b[16] = {4, 3, 2, 1, 1, 2, 2, 2, 4, 3, 2, 1, 1, 2, 2, 2};
-	printf("-%d", check(a, b));
-}
