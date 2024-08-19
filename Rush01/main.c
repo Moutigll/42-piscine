@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:03:46 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/18 18:44:27 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/18 22:47:48 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	generate_combinations(int permutations[24][4]);
 static int	g_perms[24][4];
 static int	g_index = 0;
-int	g_comb[16];
+int			g_comb[16];
 
 void	swap(int *a, int *b)
 {
@@ -91,7 +91,7 @@ int	check_comb(const char *argv)
 	return (1);
 }
 
-int	main(int argc, char const *argv[])
+int	main(int argc,unsigned char const *argv[])
 {
 	fill_permutations();
 	if (argc != 2)
@@ -104,9 +104,6 @@ int	main(int argc, char const *argv[])
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	for (int i = 0; i < 16; i++) {
-        printf("%d, ", g_comb[i]); // Affiche avec deux décimales
-    }
 	generate_combinations(g_perms);
 	return (0);
 }

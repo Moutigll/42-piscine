@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 18:11:53 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/18 18:45:15 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/18 18:48:55 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	initialize_utils(int utils[])
 	utils[23] = -1;
 }
 
-int	check_sequences(int tab[4][4], int comb[16], int utils[])
+int	check_sequences(int tab[4][4], int utils[])
 {
 	int	uc;
 	int	t;
@@ -97,7 +97,7 @@ int	check_sequences(int tab[4][4], int comb[16], int utils[])
 		while (i < 4)
 		{
 			max_sequence = get_max_sequence(tab, &utils[uc * 6], i);
-			if (max_sequence != comb[a])
+			if (max_sequence != g_comb[a])
 				return (0);
 			a++;
 			i++;
