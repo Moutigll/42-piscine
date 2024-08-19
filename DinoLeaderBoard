@@ -9,8 +9,7 @@ elif [[ "$1" =~ ^top ]]; then
 	exit 1
 fi
 
-/sgoinfre/goinfre/Perso/nlaerema/tools/kdo_init
-ACCESS_TOKEN=$(/sgoinfre/goinfre/Perso/nlaerema/tools/kdo_key)
+ACCESS_TOKEN=$(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)
 
 DATA_1=$(curl -s -G -H "Authorization: Bearer $ACCESS_TOKEN" \
 	--data-urlencode "page[size]=100" \

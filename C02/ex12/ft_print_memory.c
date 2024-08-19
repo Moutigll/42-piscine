@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 13:32:42 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/15 14:04:45 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/19 21:10:21 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	return (addr);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char	test[] = "Bonjour les Aminche. C'est fou tout ce qu'on peut faire";
 
 	ft_print_memory(test, 100);
 	return (0);
-}*/
+}
