@@ -6,13 +6,14 @@
 #    By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 19:47:53 by ele-lean          #+#    #+#              #
-#    Updated: 2024/08/19 22:15:23 by ele-lean         ###   ########.fr        #
+#    Updated: 2024/08/19 22:27:22 by ele-lean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import json
 import time
 import monotonic
+import getpass
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -42,14 +43,9 @@ prenoms = [
 
 print("Nombre d'élèves: " + str(len(prenoms)))
 
-# Login et mot de passe
-login = ""
-mdp = ""
-
-# Initialiser le pilote Chrome
+login = input("Login: ")
+mdp = getpass.getpass('Mdp: ')
 driver = webdriver.Chrome()
-
-# Liste pour stocker les scores
 scores = []
 
 try:
