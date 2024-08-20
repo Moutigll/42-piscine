@@ -6,7 +6,7 @@
 #    By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 19:47:53 by ele-lean          #+#    #+#              #
-#    Updated: 2024/08/20 17:44:10 by ele-lean         ###   ########.fr        #
+#    Updated: 2024/08/20 18:00:08 by ele-lean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,7 @@ prenoms = [
     "mtatar", "salwong", "rdelepin", "mkreko", "lplottin", "isehim", "bperrot",
     "spicque", "abensala", "jtannier", "jhatting", "matgabri", "gdefrace", "abuty",
     "ngilles", "jnicolle", "qgutmann", "davlelie", "taubry", "mflandri", "rbouchou",
-    "ansleima", "jgrisoni", "hzwak", "apain", "jliot", "bcuda", "kdelanoe", "mung",
-    "ggros", "mcardonn", "fvasset", "tprovost", "hgautier", "yadoui-d", "gpommere",
-    "tcarle", "ygarnier", "garside", "vconrair", "mrivon", "hbarthel", "tbroguy",
-    "mlouiset", "thebrard", "agohis", "mde-bias", "een-nass", "llocquet", "loduhame",
-    "cle-berr", "amarti", "bvilly", "atakoui", "tenard"
+    "ansleima", "jgrisoni", "hzwak", "apain", "jliot"
 ]
 
 
