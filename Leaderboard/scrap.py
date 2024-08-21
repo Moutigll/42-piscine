@@ -25,7 +25,7 @@ try:
     import dropbox
     from pathlib import Path
 
-    DROPBOX_ACCESS_TOKEN = "sl.B7UOXlw1SNObS9GswO4PvV3Ze9H8NJq0DGCrcxx9fjLB1qSa8qe2IARaQ8EKjgadL7m2buyn-PNLOjtYSPiSn4r2SozVYgYt08C7YtHmWAM3wWkuvAU0vjT5wpCBLDbC5Rj33wwkplrku_4sS2-A6Kc"
+    DROPBOX_ACCESS_TOKEN = "sl.B7VnfLsB9sZ53ypETHnfb7OXcIK4nKRYinyNqWT0loehWCelcxDwmuuaQPYEeDeFXxXt4BSv25m_Lx8eghQsEvrI9m54SJRK2DI6b3akdcAI6LkvZ-gIiy3rtyxFfYwmdwYqViP1c9oMDavWnkjvjtg"
 
     dbx = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
 
