@@ -6,7 +6,7 @@
 #    By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 19:47:53 by ele-lean          #+#    #+#              #
-#    Updated: 2024/08/20 18:00:08 by ele-lean         ###   ########.fr        #
+#    Updated: 2024/08/21 16:50:21 by ele-lean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,13 @@ try:
     from selenium.webdriver.support import expected_conditions as EC
     import dropbox
     from pathlib import Path
+    
+    ACCESS_TOKEN = ''
+#Yeah the token is public, you can do wathever you want with it.
+#Just don't delete the data if you don't want to annoy other people
+#(ps: personnally i don't care about what you do)
 
-    DROPBOX_ACCESS_TOKEN = "sl.B7VnfLsB9sZ53ypETHnfb7OXcIK4nKRYinyNqWT0loehWCelcxDwmuuaQPYEeDeFXxXt4BSv25m_Lx8eghQsEvrI9m54SJRK2DI6b3akdcAI6LkvZ-gIiy3rtyxFfYwmdwYqViP1c9oMDavWnkjvjtg"
-
-    dbx = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
+    dbx = dropbox.Dropbox(ACCESS_TOKEN)
 
     prenoms = [
         "ele-lean", "malevieu", "lchauvet", "almeddah", "cpoulain", "jcheron", "tobesnar",
@@ -138,24 +141,24 @@ except Exception as e:
 	exc_type, exc_obj, exc_tb = sys.exc_info()
 	fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
 	print(exc_type, fname, exc_tb.tb_lineno)
-	a = input("Multiple modules are required to run this script do you wanna try to automatically install them ?")
-	def install(package):
-		subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-	required_modules = [
-		"dropbox",
-		"json",
-		"selenium",
-		"monotonic",
-		"getpass",
-		"time",
-		"pathlib"
-	]
-	for module in required_modules:
-		try:
-			__import__(module)
-		except ImportError:
-			print(f"Module {module} non trouvé, installation...")
-			install(module)
-		else:
-			print(f"Module {module} déjà installé.")
+	if input("Multiple modules are required to run this script do you wanna try to automatically install them ? [o/n]") == "o":
+		def install(package):
+			subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+		required_modules = [
+			"dropbox",
+			"json",
+			"selenium",
+			"monotonic",
+			"getpass",
+			"time",
+			"pathlib"
+		]
+		for module in required_modules:
+			try:
+				__import__(module)
+			except ImportError:
+				print(f"Module {module} non trouvé, installation...")
+				install(module)
+			else:
+				print(f"Module {module} déjà installé.")
 	print("if it's still not working you can try 'sudo apt-get install chromium-chromedriver'\033[0;0m")
