@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 16:25:39 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/14 10:46:45 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/22 20:37:05 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	ft_fibonacci(int index)
 	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
-/*int	main(void)
+int	main(void)
 {
-	printf("%d", ft_fibonacci(10));
+	printf("%d", ft_fibonacci(101));
 }
-*/

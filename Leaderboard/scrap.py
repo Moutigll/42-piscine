@@ -6,7 +6,7 @@
 #    By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 19:47:53 by ele-lean          #+#    #+#              #
-#    Updated: 2024/08/21 16:50:21 by ele-lean         ###   ########.fr        #
+#    Updated: 2024/08/22 23:23:35 by ele-lean         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ try:
     import dropbox
     from pathlib import Path
     
-    ACCESS_TOKEN = ''
+    ACCESS_TOKEN = 
 #Yeah the token is public, you can do wathever you want with it.
 #Just don't delete the data if you don't want to annoy other people
 #(ps: personnally i don't care about what you do)
@@ -33,9 +33,9 @@ try:
     dbx = dropbox.Dropbox(ACCESS_TOKEN)
 
     prenoms = [
-        "ele-lean", "malevieu", "lchauvet", "almeddah", "cpoulain", "jcheron", "tobesnar",
-        "ladurand", "edetoh", "releroy", "vseyidov", "tle-goff", "throbert", "lnassar",
-        "cabraham", "mduvey", "ghoyaux", "aberenge", "lsellier", "ljacq", "abidaux",
+        "ele-lean", "abidaux", "throbert", "malevieu", "lchauvet", "almeddah", "cpoulain", "jcheron", "tobesnar",
+        "ladurand", "edetoh", "releroy", "vseyidov", "tle-goff", "lnassar",
+        "cabraham", "mduvey", "ghoyaux", "aberenge", "lsellier", "ljacq", 
         "cfleuret", "adcisse", "tgoudman", "hdelacou", "hdruel", "nlecreux", "jabertin",
         "huyanan", "mavander", "lvan-bre", "niclambe", "jbastard", "aperceva", "abosc",
         "tolivaud", "calleaum", "emaillet", "rbardet-", "lgrisel", "alegrix", "tharrel",
