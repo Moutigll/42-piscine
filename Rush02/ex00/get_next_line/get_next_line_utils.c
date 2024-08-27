@@ -6,15 +6,15 @@
 /*   By: almeddah <almeddah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 16:19:23 by almeddah          #+#    #+#             */
-/*   Updated: 2024/08/24 16:19:24 by almeddah         ###   ########.fr       */
+/*   Updated: 2024/08/25 18:16:19 by almeddah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	while (s[len] != '\0')

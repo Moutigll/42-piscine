@@ -6,7 +6,7 @@
 /*   By: almeddah <almeddah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:25:44 by almeddah          #+#    #+#             */
-/*   Updated: 2024/08/24 16:30:22 by almeddah         ###   ########.fr       */
+/*   Updated: 2024/08/25 18:16:19 by almeddah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@
 typedef struct s_list
 {
 	char			*content;
+	char			*trad;
 	struct s_list	*next;
 }					t_list;
 
 char				*get_next_line(int fd);
-size_t				ft_strlen(const char *s);
+int					ft_strlen(const char *s);
 void				add_to_stash(t_list **stash, char *buf, int readed);
 void				clean_stash(t_list **stash);
 t_list				*ft_lst_get_last(t_list *stash);
