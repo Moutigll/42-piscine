@@ -6,7 +6,7 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:36:13 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/27 14:44:45 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:04:35 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 	char	*temp;
 
 	i = 0;
-	while (tab[i] != NULL)
+	while (tab[i])
 	{
 		min_idx = i;
 		j = i + 1;
-		while (tab[j] != NULL)
+		while (tab[j])
 		{
 			if (cmp(tab[j], tab[min_idx]) < 0)
 				min_idx = j;
