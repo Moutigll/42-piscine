@@ -1,13 +1,13 @@
-NAME = ft_display_file
+NAME = ft_cat
 
-SRC = main.c
+SRC = ft_cat.c
 
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	cc $(CFLAGS) $(SRC) -o $(NAME)
+	gcc $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -f $(NAME)
