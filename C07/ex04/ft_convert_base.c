@@ -6,18 +6,11 @@
 /*   By: ele-lean <ele-lean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 00:43:52 by ele-lean          #+#    #+#             */
-/*   Updated: 2024/08/19 00:52:29 by ele-lean         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:48:36 by ele-lean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <stdlib.h>
 
 int	is_base_correct(char *base)
 {
@@ -43,16 +36,30 @@ int	is_base_correct(char *base)
 	return (1);
 }
 
-int	convert(char *str, char *base, int i, int base_len)
+int	skip_whitespace(char *nbr)
+{
+	int	i;
+
+	i = 0;
+	while (nbr[i] == ' ' || nbr[i] == '\t'
+		|| nbr[i] == '\n' || nbr[i] == '\v'
+		|| nbr[i] == '\f' || nbr[i] == '\r')
+		i++;
+	return (i);
+}
+
+int	decode_base(char *nbr, char *base, int base_len, int start_idx)
 {
 	int	k;
 	int	result;
+	int	i;
 
 	result = 0;
-	while (str[i])
+	i = start_idx;
+	while (nbr[i])
 	{
 		k = 0;
-		while (base[k] && base[k] != str[i])
+		while (base[k] && base[k] != nbr[i])
 			k++;
 		if (base[k] == '\0')
 			break ;
@@ -62,37 +69,33 @@ int	convert(char *str, char *base, int i, int base_len)
 	return (result);
 }
 
-int	ft_atoi_base(char *str, char *base)
+char	*ft_putnbr_base(long int nbr, char *base_to, int is_neg);
+
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int	i;
 	int	sign;
-	int	base_len;
+	int	base_from_len;
+	int	base_to_len;
+	int	start_idx;
+	int	dec_value;
 
-	if (is_base_correct(base) == 0)
-		return (0);
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
+	if (!is_base_correct(base_from) || !is_base_correct(base_to))
+		return (NULL);
+	base_from_len = 0;
+	while (base_from[base_from_len])
+		base_from_len++;
+	base_to_len = 0;
+	while (base_to[base_to_len])
+		base_to_len++;
+	start_idx = skip_whitespace(nbr);
 	sign = 1;
-	while (str[i] != '\0' && (str[i] == '+' || str[i] == '-'))
+	while (nbr[start_idx] != '\0' && (nbr[start_idx] == '+'
+			|| nbr[start_idx] == '-'))
 	{
-		if (str[i] == '-')
+		if (nbr[start_idx] == '-')
 			sign = -sign;
-		i++;
+		start_idx++;
 	}
-	base_len = 0;
-	while (base[base_len])
-		base_len++;
-	return (convert(str, base, i, base_len) * sign);
+	dec_value = decode_base(nbr, base_from, base_from_len, start_idx) * sign;
+	return (ft_putnbr_base(dec_value, base_to, sign < 0));
 }
-
-/*int	main(void)
-{
-	printf("%d\n", ft_atoi_base("nneefiff", "poneyvif"));
-	printf("%d\n", ft_atoi_base("eenno", "  poney-vif"));
-	printf("%d\n", ft_atoi_base("-++---+-nneefff", "poneyvif"));
-	printf("%d\n", ft_atoi_base("4833215", "01"));
-	printf("%d\n", ft_atoi_base("-10000000000000000000000000000000", "01"));
-	printf("%d\n", ft_atoi_base("F49A2C", "0123456789ABCDEF"));
-}*/
